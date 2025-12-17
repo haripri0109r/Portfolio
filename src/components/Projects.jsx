@@ -14,7 +14,7 @@ const Projects = () => {
       category: 'ai',
       date: 'AUG 2024',
       link: '#',
-      github: 'https://github.com/haripri0109r/smart_home_automation_System_with_gesture-.git'
+      github: 'https://github.com/haripri0109r/smart_home_automation_System_with_gesture'
     },
     {
       title: 'BellyFull (Food Delivery Website)',
@@ -23,7 +23,7 @@ const Projects = () => {
       category: 'web',
       date: 'NOV 2024',
       link: '#',
-      github: 'https://github.com/haripri0109r/BellyFull-.git'
+      github: 'https://github.com/haripri0109r/BellyFull'
     },
     {
       title: 'Voting Management System',
@@ -32,7 +32,7 @@ const Projects = () => {
       category: 'fullstack',
       date: 'APR 2025',
       link: '#',
-      github: 'https://github.com/haripri0109r/voting-system-.git'
+      github: 'https://github.com/haripri0109r/voting-system'
     },
     {
       title: 'Invoice Generator',
@@ -41,7 +41,7 @@ const Projects = () => {
       category: 'web',
       date: 'JAN 2024',
       link: '#',
-      github: 'https://github.com/haripri0109r/invoice2.git'
+      github: 'https://github.com/haripri0109r/invoice2'
     }
   ];
 
@@ -99,10 +99,10 @@ const Projects = () => {
                   {project.date}
                 </span>
                 <div className="flex gap-4">
-                  <a href={project.github} className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-slate-50 text-base transition-all duration-300 hover:bg-primary hover:scale-110" aria-label="GitHub">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-slate-50 text-base transition-all duration-300 hover:bg-primary hover:scale-110" aria-label="GitHub">
                     <FaGithub />
                   </a>
-                  <a href={project.link} className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-slate-50 text-base transition-all duration-300 hover:bg-primary hover:scale-110" aria-label="Live Demo">
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-slate-50 text-base transition-all duration-300 hover:bg-primary hover:scale-110" aria-label="Live Demo">
                     <FaExternalLinkAlt />
                   </a>
                 </div>

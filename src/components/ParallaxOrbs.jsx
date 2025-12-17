@@ -13,8 +13,8 @@ const ParallaxOrbs = () => {
       <div className="hidden" style={{
         // These CSS variables pick up Tailwind gradient colors in containers using bg-gradient-to-r from-primary to-accent
         // We provide defaults to primary/accent colors.
-        ['--tw-gradient-from']: 'rgba(201,162,39,0.5)',
-        ['--tw-gradient-to']: 'rgba(230,199,90,0.45)'
+        '--tw-gradient-from': 'rgba(201,162,39,0.5)',
+        '--tw-gradient-to': 'rgba(230,199,90,0.45)'
       }} />
     </div>
   );
