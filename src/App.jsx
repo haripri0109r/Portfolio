@@ -11,10 +11,13 @@ import SpotlightCursor from './components/SpotlightCursor.jsx';
 import ParallaxOrbs from './components/ParallaxOrbs.jsx';
 import AnimatedDivider from './components/AnimatedDivider.jsx';
 import ScrollProgress from './components/ScrollProgress.jsx';
+import LoadingScreen from './components/LoadingScreen.jsx';
 
 function App() {
   return (
-    <div className="min-h-screen relative bg-darkBg">
+    <>
+      <LoadingScreen />
+      <div className="min-h-screen relative bg-darkBg">
       <ScrollProgress />
       <div className="pointer-events-none absolute inset-0 aurora animate-aurora" />
       <div className="pointer-events-none absolute inset-0 grid-overlay opacity-20" />
@@ -34,7 +37,8 @@ function App() {
       <AnimatedDivider />
       <Contact />
       <Footer />
-    </div>
+      </div>
+    </>
   );
 }
 
