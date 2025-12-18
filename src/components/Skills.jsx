@@ -4,7 +4,7 @@ import TiltCard from './TiltCard.jsx';
 import Marquee from './Marquee.jsx';
 import { 
   FaReact, FaNodeJs, FaPython, FaJava, FaHtml5, FaCss3Alt, 
-  FaJs, FaGitAlt, FaDatabase
+  FaJs, FaGitAlt, FaDatabase, FaBrain
 } from 'react-icons/fa';
 import { 
   SiMongodb, SiExpress, SiDjango, SiFlask, SiMysql, 
@@ -44,10 +44,20 @@ const Skills = () => {
       ]
     },
     {
+      title: 'AI/ML & Data Science',
+      skills: [
+        { name: 'Machine Learning', icon: <FaBrain />, level: 80 },
+        { name: 'Deep Learning', icon: <FaBrain />, level: 75 },
+        { name: 'TensorFlow', icon: <FaPython />, level: 78 },
+        { name: 'Data Analysis', icon: <FaDatabase />, level: 82 }
+      ]
+    },
+    {
       title: 'Tools & Others',
       skills: [
         { name: 'Git', icon: <FaGitAlt />, level: 85 },
         { name: 'VS Code', icon: <SiVisualstudiocode />, level: 90 },
+        { name: 'Software Engineering', icon: <FaDatabase />, level: 82 },
         { name: 'Canva', icon: <FaDatabase />, level: 75 },
         { name: 'Microsoft Word', icon: <FaDatabase />, level: 85 },
         { name: 'Colab', icon: <FaPython />, level: 80 },
