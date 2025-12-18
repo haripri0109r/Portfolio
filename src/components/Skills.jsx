@@ -67,10 +67,34 @@ const Skills = () => {
   ];
 
   const codingProfiles = [
-    { platform: 'Skill Rack', problems: '1100+', rank: '308 Bronzes | 10+ Certificates', color: '#FFA116' },
-    { platform: 'LeetCode', problems: '240+', rank: 'Max Rating: 1617 | Rank: 164,653', color: '#FFA116' },
-    { platform: 'CodeChef', problems: '40+', rank: 'Haripriyan A', color: '#5B4638' },
-    { platform: 'Coding Ninjas', problems: '35+', rank: 'Haripriyan A', color: '#00EA64' }
+    {
+      platform: 'Skill Rack',
+      problems: '1100+',
+      rank: '308 Bronzes | 10+ Certificates',
+      color: '#FFA116',
+      url: 'https://www.skillrack.com/faces/resume.xhtml?id=514928&key=0d345d3d9db64288c59d67b5a48ac479abc78610'
+    },
+    {
+      platform: 'LeetCode',
+      problems: '240+',
+      rank: 'Max Rating: 1617 | Rank: 164,653',
+      color: '#FFA116',
+      url: 'https://leetcode.com/u/Haripriyan_2307/'
+    },
+    {
+      platform: 'CodeChef',
+      problems: '40+',
+      rank: 'Haripriyan A',
+      color: '#5B4638',
+      url: 'https://www.codechef.com/users/leap_list_99'
+    },
+    {
+      platform: 'Coding Ninjas',
+      problems: '35+',
+      rank: 'Haripriyan A',
+      color: '#00EA64',
+      url: 'https://www.naukri.com/code360/profile/3b1c3321-8310-40b5-a4af-085ff5340ada'
+    }
   ];
 
   return (
@@ -153,6 +177,16 @@ const Skills = () => {
                   {profile.problems}
                 </p>
                 <p className="text-slate-400 text-base">{profile.rank}</p>
+                {profile.url && (
+                  <a
+                    href={profile.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-block btn-outline btn-shine px-5 py-2 no-underline"
+                  >
+                    View Profile
+                  </a>
+                )}
               </motion.div>
             ))}
           </div>
