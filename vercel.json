@@ -1,7 +1,4 @@
 {
-  "functions": {
-    "api/*.js": {
-      "runtime": "nodejs"
-    }
-  }
+  "buildCommand": "npm run build",
+  "outputDirectory": "build"
 }
