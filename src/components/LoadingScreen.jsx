@@ -100,6 +100,7 @@ function LoadingScreen() {
                     left: '50%',
                     marginTop: '-4px',
                     marginLeft: '-4px',
+                    transformOrigin: `${50 + i * 20}px 0px`,
                   }}
                   animate={{
                     rotate: [0, 360],
@@ -117,9 +118,6 @@ function LoadingScreen() {
                       repeat: Infinity,
                       delay: i * 0.4,
                     },
-                  }}
-                  style={{
-                    transformOrigin: `${50 + i * 20}px 0px`,
                   }}
                 />
               ))}
