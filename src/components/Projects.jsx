@@ -12,7 +12,7 @@ const Projects = () => {
       description: 'A webcam-based AI application using Python and Computer Vision to help physically disabled individuals control home appliances hands-free. The system recognizes facial gestures like eye blink, mouth open, and head tilt, and includes an absence-detection feature with WhatsApp alerts for improved safety.',
       tech: ['Python', 'OpenCV', 'MediaPipe', 'TensorFlow', 'Twilio API'],
       category: 'ai',
-      date: 'AUG 2024',
+      date: 'AUG 2025',
       link: '#',
       github: 'https://github.com/haripri0109r/smart_home_automation_System_with_gesture'
     },
@@ -30,7 +30,7 @@ const Projects = () => {
       description: 'Developed a secure digital voting platform using Python to conduct fair and transparent elections. Features include user authentication, real-time vote counting, and an intuitive admin panel for result management.',
       tech: ['Python', 'Django', 'HTML', 'CSS', 'JavaScript'],
       category: 'fullstack',
-      date: 'APR 2025',
+      date: 'APR 2024',
       link: '#',
       github: 'https://github.com/haripri0109r/voting-system'
     },
