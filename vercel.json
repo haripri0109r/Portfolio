@@ -1,5 +1,13 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
+  "version": 2,
+  "public": false,
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
+  "env": {},
+  "regions": ["iad1"],
+  "functions": {
+    "api/**/*.js": {
+      "runtime": "nodejs18.x"
+    }
+  }
 }
