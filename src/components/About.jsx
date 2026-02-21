@@ -7,19 +7,19 @@ const About = () => {
     {
       degree: 'B.E. CSE',
       institution: 'Sri Eshwar College of Engineering',
-      cgpa: '7.59 (upto 2nd Sem)',
+      cgpa: '7.5 (upto 3nd Sem)',
       year: '2024-2028'
     },
     {
       degree: 'HSC',
       institution: 'Ambal Matric Hr Sec School',
-      cgpa: '83.2%',
+      cgpa: '81.6%',
       year: '2023-2024'
     },
     {
       degree: 'SSLC',
       institution: 'Ambal Matric Hr Sec School',
-      cgpa: '81.6%',
+      cgpa: '83.2%',
       year: '2021-2022'
     }
   ];
