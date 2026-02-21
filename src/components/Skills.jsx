@@ -69,28 +69,28 @@ const Skills = () => {
   const codingProfiles = [
     {
       platform: 'Skill Rack',
-      problems: '1100+',
-      rank: '308 Bronzes | 10+ Certificates',
+      problems: '1120+',
+      rank: '315 Bronzes | 10+ Certificates',
       color: '#FFA116',
       url: 'https://www.skillrack.com/faces/resume.xhtml?id=514928&key=0d345d3d9db64288c59d67b5a48ac479abc78610'
     },
     {
       platform: 'LeetCode',
-      problems: '240+',
-      rank: 'Max Rating: 1617 | Rank: 164,653',
+      problems: '270+',
+      rank: 'Max Rating: 1767 | Rank: 99,431',
       color: '#FFA116',
       url: 'https://leetcode.com/u/Haripriyan_2307/'
     },
     {
       platform: 'CodeChef',
-      problems: '40+',
+      problems: '50+',
       rank: 'Haripriyan A',
       color: '#5B4638',
       url: 'https://www.codechef.com/users/leap_list_99'
     },
     {
       platform: 'Coding Ninjas',
-      problems: '35+',
+      problems: '40+',
       rank: 'Haripriyan A',
       color: '#00EA64',
       url: 'https://www.naukri.com/code360/profile/3b1c3321-8310-40b5-a4af-085ff5340ada'
