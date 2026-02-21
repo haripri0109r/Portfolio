@@ -14,8 +14,8 @@ const Achievements = () => {
     },
     {
       icon: <FaMedal />,
-      title: 'CODELEE 1st Place',
-      description: 'Secured 1st place in CODELEE (Leetcode) coding contest in Semester 2',
+      title: 'CODELEE 2st Place',
+      description: 'Secured 2st place in CODELEE (Leetcode) coding contest in Semester 2',
       date: 'SEPT 2025',
       color: '#10b981'
     },
