@@ -1,26 +1,57 @@
 export const personalInfo = {
   name: "Haripriyan A",
-  role: "Software Engineer",
-  email: "haripriyan0109r@gmail.com",
-  phone: "9787586293",
-  location: "India",
-  resumeUrl: "#", 
-  status: "Open to SDE Internships 2025/2026",
-  bio: "As a second-year CSE student at Sri Eshwar College of Engineering, I build production-grade web applications and AI systems that solve real problems. Passionate about software architecture, system design, and open-source contributions."
+  email: "haripri0109r@gmail.com",
+  phone: "+91 9787586293",
 };
 
 export const socialLinks = {
   github: "https://github.com/haripri0109r",
-  linkedin: "https://linkedin.com/in/haripriyan-a",
+  linkedin: "https://www.linkedin.com/in/haripriyana677/",
   portfolio: "https://haripri0109r.github.io/Portfolio"
 };
+
+export const educationData = [
+  {
+    institution: "Sri Eshwar College of engineering",
+    score: "7.5(IIIrd - sem)",
+    degree: "B.E CSE",
+    duration: "2024-2028"
+  },
+  {
+    institution: "Ambal Matriculation Higher Secondary School",
+    score: "81.6%",
+    degree: "HSC",
+    duration: "2023-2024"
+  },
+  {
+    institution: "Ambal Matriculation Higher Secondary School",
+    score: "83.2%",
+    degree: "SSLC",
+    duration: "2021-2022"
+  }
+];
+
+export const internshipsData = [
+  {
+    role: "Open Source Contributor",
+    company: "GirlScript Summer of Code (GSSoC)",
+    duration: "2026",
+    description: "Contributing to open-source projects through GSSoC 2026 by resolving GitHub issues, developing new features, and submitting pull requests using Git, GitHub, and collaborative development workflows."
+  },
+  {
+    role: "Better Tomorrow",
+    company: "Better Tomorrow",
+    duration: "2025",
+    description: "Developed a full-stack E-commerce web application using React.js, Node.js, Express.js, and MongoDB, implementing CRUD APIs, user authentication with JWT, cart functionality, and product listing features."
+  }
+];
 
 const placeholderSvg = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'><rect width='800' height='600' fill='%231a1c23'/><path d='M350 250 L450 250 L400 200 Z' fill='%23333'/><path d='M300 350 L500 350 L400 250 Z' fill='%23444'/></svg>";
 
 export const projectsData = [
   {
     id: "course-finder",
-    title: "Course Finder",
+    title: "Course Finder (Ongoing)",
     category: "Full Stack",
     date: "2026",
     github: "https://github.com/haripri0109r/course-finder",
@@ -31,7 +62,7 @@ export const projectsData = [
   },
   {
     id: "focustube",
-    title: "FocusTube",
+    title: "FocusTube – YouTube Productivity Extension",
     category: "Chrome Extension",
     date: "2026",
     github: "https://github.com/haripri0109r/focustube",
@@ -53,63 +84,93 @@ export const projectsData = [
   }
 ];
 
+export const achievementsData = [
+  {
+    title: "2nd Runner - CodeLee Programming Competition (Leetcode)",
+    date: "April 2025"
+  },
+  {
+    title: "2nd Runner - Freshathon (Web-design Competition)",
+    date: "December 2025"
+  }
+];
+
+export const codingProfilesData = [
+  {
+    platform: "Leetcode",
+    details: "Max Rating:1767| Global Rank: 106,530| Problems Solved : 301",
+    link: "https://leetcode.com/u/Haripriyan_2307/"
+  },
+  {
+    platform: "SkillRack",
+    details: "Bronze Medals : 315 | Global Rank: 17,961| Problems Solved : 1124",
+    link: "https://skillrack.com/faces/resume.xhtml?id=514928&key=0d345d3d9db64288c59d67b5a48ac479abc78610"
+  },
+  {
+    platform: "Codechef",
+    details: "Bronze Badge | Problems Solved : 60 |Rating: 906",
+    link: "https://www.codechef.com/users/leap_list_99"
+  }
+];
+
+export const certificationsData = [
+  {
+    title: "Design Thinking (Elite Silver)",
+    issuer: "NPTEL",
+    date: "2026"
+  },
+  {
+    title: "Python Programming Masterclass",
+    issuer: "Udemy",
+    date: "2025"
+  },
+  {
+    title: "Mastering Data Structures & Algorithms using C and C++",
+    issuer: "Udemy",
+    date: "2025"
+  },
+  {
+    title: "Complete Guide to C programming Foundations",
+    issuer: "LinkedIn Learning",
+    date: "2025"
+  },
+  {
+    title: "C & C++ Training Completion",
+    issuer: "IIT Bombay",
+    date: "2024"
+  }
+];
+
 export const skillsData = {
   categories: [
     {
-      title: "Frontend & UI",
+      title: "Languages",
       skills: [
-        { name: "ReactJS" },
-        { name: "React Native" },
-        { name: "Javascript" }
+        { name: "C" }, { name: "C++" }, { name: "Javascript" }, { name: "Python" }
       ]
     },
     {
-      title: "Backend & Systems",
+      title: "Technologies/Frameworks",
       skills: [
-        { name: "NodeJS" },
-        { name: "Express" },
-        { name: "Python" },
-        { name: "C / C++" }
+        { name: "NodeJS" }, { name: "Express" }, { name: "ReactJS" }, { name: "React Native" }, { name: "OpenCV" }, { name: "Cloud Computing" }, { name: "FireBase" }
       ]
     },
     {
-      title: "Tools & DBs",
+      title: "Database",
       skills: [
-        { name: "SQL / PostgresSQL" },
-        { name: "MongoDB" },
-        { name: "Docker / AWS" },
-        { name: "Git / GitHub" }
-      ]
-    }
-  ]
-};
-
-export const aboutData = {
-  experience: [
-    {
-      role: "Open Source Contributor",
-      company: "GirlScript Summer of Code (GSSoC)",
-      duration: "2026",
-      highlights: [
-        "Contributing to open-source projects through GSSoC 2026 by resolving GitHub issues, developing new features, and submitting pull requests using Git, GitHub, and collaborative development workflows."
+        { name: "SQL" }, { name: "Mongodb" }, { name: "PostgresSQL" }
       ]
     },
     {
-      role: "Full Stack Developer Intern",
-      company: "Better Tomorrow",
-      duration: "2025",
-      highlights: [
-        "Developed a full-stack E-commerce web application using React.js, Node.js, Express.js, and MongoDB, implementing CRUD APIs, user authentication with JWT, cart functionality, and product listing features."
+      title: "Tools",
+      skills: [
+        { name: "Git" }, { name: "GitHub" }, { name: "Postman" }, { name: "Docker" }, { name: "Vercel" }, { name: "AWS" }, { name: "Render" }, { name: "Colab" }
       ]
     },
     {
-      role: "B.E. Computer Science",
-      company: "Sri Eshwar College of Engineering",
-      duration: "2024 - 2028",
-      highlights: [
-        "CGPA: 7.5 (IIIrd - sem)",
-        "2nd Runner - CodeLee Programming Competition (Leetcode) April 2025",
-        "2nd Runner - Freshathon (Web-design Competition) December 2025"
+      title: "Core Concepts",
+      skills: [
+        { name: "Data Structures & Algorithms" }, { name: "OOP" }, { name: "DBMS" }, { name: "Computer Networks" }, { name: "Operating Systems" }
       ]
     }
   ]
