@@ -2,7 +2,6 @@ import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import AnimatedDivider from './AnimatedDivider.jsx';
-import { personalInfo } from '../content.js';
 
 const Contact = () => {
   const formRef = useRef();
@@ -48,9 +47,6 @@ const Contact = () => {
             className="mb-16 md:mb-24 text-center"
           >
             <h2 className="heading-section">LET'S TALK</h2>
-            <p className="text-xl max-w-xl mx-auto opacity-70">
-              Open to SDE internships for 2025/2026 and research collaborations.
-            </p>
           </motion.div>
 
           <div className="max-w-3xl mx-auto">
