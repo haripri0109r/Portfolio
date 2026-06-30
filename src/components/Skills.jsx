@@ -19,7 +19,7 @@ const Skills = () => {
             <h2 className="heading-section">MY SKILLS</h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-8">
             {skillsData.categories.map((cat, index) => (
               <motion.div 
                 key={index}

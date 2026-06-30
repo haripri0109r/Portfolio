@@ -13,10 +13,7 @@ const Projects = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="heading-section border-b border-cream/20 pb-8">SINCE 2023</h2>
-          <p className="text-xl md:text-2xl max-w-2xl text-cream/70 mt-8">
-            I have worked with modern web technologies and AI models to create full-stack systems and automated workflows.
-          </p>
+          <h2 className="heading-section border-b border-cream/20 pb-8">PROJECTS</h2>
         </motion.div>
 
         <div className="flex flex-col">
