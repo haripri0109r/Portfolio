@@ -1,216 +1,118 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaPaperPlane } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
+import AnimatedDivider from './AnimatedDivider.jsx';
+import { personalInfo } from '../content.js';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
+  const formRef = useRef();
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
-  const [status, setStatus] = useState('');
-  const [sending, setSending] = useState(false);
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+    setLoading(true);
 
-    if (!serviceId || !templateId || !publicKey) {
-      setStatus('Email service not configured. Please set EmailJS keys in .env');
-      return;
-    }
-
-    setSending(true);
-    setStatus('');
-    try {
-      const templateParams = {
-        // Common variables used by EmailJS default templates
-        from_name: formData.name,
-        reply_to: formData.email,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-        // Variables matching your custom template placeholders
-        name: formData.name,
-        email: formData.email,
-        time: new Date().toLocaleString(),
-      };
-      await emailjs.send(serviceId, templateId, templateParams, { publicKey });
-      setStatus("Message sent successfully! I'll get back to you soon.");
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    } catch (err) {
-      setStatus('Failed to send message. Please try again later.');
-    } finally {
-      setSending(false);
-      setTimeout(() => setStatus(''), 6000);
-    }
+    emailjs
+      .sendForm(
+        'service_h52ndu9',
+        'template_1bng84f',
+        formRef.current,
+        'Y9j4PjFwL8Zg4E0Nq'
+      )
+      .then(
+        () => {
+          setLoading(false);
+          setSuccess(true);
+          formRef.current.reset();
+          setTimeout(() => setSuccess(false), 5000);
+        },
+        (error) => {
+          setLoading(false);
+          console.error(error);
+          alert('Failed to send message.');
+        }
+      );
   };
-
-  const contactInfo = [
-    {
-      icon: <FaEnvelope />,
-      title: 'Email',
-      value: 'haripri0109r@gmail.com',
-      link: 'mailto:haripri0109r@gmail.com'
-    },
-    {
-      icon: <FaPhone />,
-      title: 'Phone',
-      value: '+91 9787586293',
-      link: 'tel:+919787586293'
-    },
-    {
-      icon: <FaLinkedin />,
-      title: 'LinkedIn',
-      value: 'Haripriyan A',
-      link: 'https://www.linkedin.com/in/haripriyana677/'
-    },
-    {
-      icon: <FaGithub />,
-      title: 'GitHub',
-      value: 'Haripriyan',
-      link: 'https://github.com/haripri0109r'
-    }
-  ];
 
   return (
-    <section className="py-20 px-5 bg-darkBg" id="contact">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="max-w-7xl mx-auto"
-      >
-        <h2 className="section-title">Get In Touch</h2>
-        
-        <div className="max-w-3xl mx-auto mb-16 text-center">
-          <p className="text-lg text-slate-400 leading-relaxed">
-            I'm currently looking for new opportunities and my inbox is always open. 
-            Whether you have a question or just want to say hi, I'll try my best to get back to you!
-          </p>
-        </div>
-
-        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 max-w-7xl mx-auto">
+    <>
+      <AnimatedDivider color="#F0F0EB" />
+      <section id="contact" className="section-light min-h-[80vh] flex flex-col justify-center">
+        <div className="container-custom">
+          
           <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="mb-16 md:mb-24 text-center"
           >
-            <h3 className="text-3xl text-slate-50 mb-8 font-bold">Let's Connect</h3>
-            <div className="flex flex-col gap-5">
-              {contactInfo.map((info, index) => (
-                <motion.a
-                  key={index}
-                  href={info.link}
-                  className="card p-6 rounded-xl flex items-center gap-5 no-underline transition-all duration-300 hover:border-primary hover:shadow-lg hover:shadow-primary/20 hover:translate-x-2.5"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary text-2xl">
-                    {info.icon}
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-slate-400 text-sm mb-1">{info.title}</p>
-                    <p className="text-slate-50 text-lg font-semibold">{info.value}</p>
-                  </div>
-                </motion.a>
-              ))}
-            </div>
+            <h2 className="heading-section">LET'S TALK</h2>
+            <p className="text-xl max-w-xl mx-auto opacity-70">
+              Open to SDE internships for 2025/2026 and research collaborations.
+            </p>
           </motion.div>
 
-          <motion.div 
-            className="card p-10"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
-              <div>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-5 py-4 bg-primary/5 border-2 border-primary/10 rounded-lg text-slate-50 text-base font-inter transition-all duration-300 focus:outline-none focus:border-primary focus:bg-primary/10"
-                />
+          <div className="max-w-3xl mx-auto">
+            <motion.form 
+              ref={formRef}
+              onSubmit={handleSubmit}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="space-y-8"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-2">
+                  <label className="text-xs font-mono uppercase tracking-widest opacity-60">Name</label>
+                  <input 
+                    type="text" 
+                    name="user_name"
+                    required
+                    className="w-full bg-transparent border-b border-dark/20 py-3 focus:outline-none focus:border-dark transition-colors font-body text-lg"
+                    placeholder="Jane Doe"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-mono uppercase tracking-widest opacity-60">Email</label>
+                  <input 
+                    type="email" 
+                    name="user_email"
+                    required
+                    className="w-full bg-transparent border-b border-dark/20 py-3 focus:outline-none focus:border-dark transition-colors font-body text-lg"
+                    placeholder="jane@company.com"
+                  />
+                </div>
               </div>
-
-              <div>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-5 py-4 bg-primary/5 border-2 border-primary/10 rounded-lg text-slate-50 text-base font-inter transition-all duration-300 focus:outline-none focus:border-primary focus:bg-primary/10"
-                />
-              </div>
-
-              <div>
-                <input
-                  type="text"
-                  name="subject"
-                  placeholder="Subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-5 py-4 bg-primary/5 border-2 border-primary/10 rounded-lg text-slate-50 text-base font-inter transition-all duration-300 focus:outline-none focus:border-primary focus:bg-primary/10"
-                />
-              </div>
-
-              <div>
-                <textarea
+              <div className="space-y-2">
+                <label className="text-xs font-mono uppercase tracking-widest opacity-60">Message</label>
+                <textarea 
                   name="message"
-                  placeholder="Your Message"
-                  rows="6"
-                  value={formData.message}
-                  onChange={handleChange}
                   required
-                  className="w-full px-5 py-4 bg-primary/5 border-2 border-primary/10 rounded-lg text-slate-50 text-base font-inter transition-all duration-300 resize-y min-h-[150px] focus:outline-none focus:border-primary focus:bg-primary/10"
-                ></textarea>
+                  rows="4"
+                  className="w-full bg-transparent border-b border-dark/20 py-3 focus:outline-none focus:border-dark transition-colors font-body text-lg resize-none"
+                  placeholder="Tell me about the role or project..."
+                />
               </div>
-
-              <button type="submit" disabled={sending} className={`btn-primary btn-shine group flex items-center gap-2.5 self-start ${sending ? 'opacity-70 cursor-not-allowed' : ''}`}>
-                <span>{sending ? 'Sending…' : 'Send Message'}</span>
-                <FaPaperPlane className="transition-transform duration-300 group-hover:translate-x-1" />
-              </button>
-
-              {status && (
-                <motion.p 
-                  className="text-accent font-semibold text-center p-4 bg-accent/10 rounded-lg mt-2.5"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
+              
+              <div className="pt-4 flex items-center justify-between">
+                <span className="text-sm font-mono text-green-600">
+                  {success ? "Message sent successfully! ✓" : ""}
+                </span>
+                <button 
+                  type="submit" 
+                  disabled={loading}
+                  className="btn-pill-dark"
                 >
-                  {status}
-                </motion.p>
-              )}
-            </form>
-          </motion.div>
+                  {loading ? 'SENDING...' : 'SEND MESSAGE'}
+                </button>
+              </div>
+            </motion.form>
+          </div>
+
         </div>
-      </motion.div>
-    </section>
+      </section>
+    </>
   );
 };
 
