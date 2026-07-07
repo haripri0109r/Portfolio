@@ -78,8 +78,9 @@ const ProjectDetail = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6 }}
-                className="w-full rounded-2xl overflow-hidden shadow-2xl"
+                className={`rounded-2xl overflow-hidden shadow-2xl ${
+                  project.id === "course-finder" ? "max-w-sm md:max-w-md mx-auto" : "w-full"
+                }`}
               >
                 <img src={img} alt={`${project.title} screenshot ${index + 1}`} className="w-full h-auto object-cover" />
               </motion.div>
