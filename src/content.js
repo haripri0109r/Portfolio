@@ -2,6 +2,7 @@ export const personalInfo = {
   name: "Haripriyan A",
   email: "haripri0109r@gmail.com",
   phone: "+91 9787586293",
+  resumeUrl: "/Haripriyan A  resume .pdf"
 };
 
 export const socialLinks = {
@@ -58,7 +59,7 @@ export const projectsData = [
     shortDescription: "A full-stack course discovery platform enabling users to explore, track, and manage learning progress.",
     description: "Architected and deployed a full-stack course discovery platform enabling users to explore, track, and manage learning progress with personalized recommendations, course completion tracking, and push notifications with deep linking. Built scalable RESTful APIs using Node.js and Express.js integrated with MongoDB, and optimized React Native front-end performance for a seamless cross-platform user experience.",
     techStack: "MongoDB, Express.js, React Native, Node.js, JavaScript",
-    images: [placeholderSvg, placeholderSvg, placeholderSvg]
+    images: ["/images/course_finder1.png", "/images/course_finder2.png", "/images/course_finder3.png"]
   },
   {
     id: "focustube",
@@ -69,7 +70,7 @@ export const projectsData = [
     shortDescription: "A productivity extension that enhances focus by analyzing and filtering YouTube content.",
     description: "Designed and deployed a cross-browser productivity extension that enhances focus by analyzing and filtering YouTube content based on user-defined learning preferences. Built dynamic feed processing, Shorts blocking, educational content prioritization, channel management, and persistent local storage features, resulting in a personalized and distraction-free video consumption experience while maintaining seamless integration with YouTube's interface.",
     techStack: "React, TypeScript, Plasmo, Chrome Extension API, IndexedDB, Tailwind CSS",
-    images: [placeholderSvg, placeholderSvg, placeholderSvg]
+    images: ["/images/FocusTube1.png", "/images/FocusTube2.png", "/images/Focustube3.png"]
   },
   {
     id: "smart-research",
@@ -80,7 +81,7 @@ export const projectsData = [
     shortDescription: "A multi-agent AI research platform that automates paper discovery and summarization.",
     description: "Designed and deployed a multi-agent AI research platform that automates paper discovery, summarization, comparison, document-grounded chat, and research report generation. Implemented a RAG pipeline using ChromaDB, BGE embeddings, and cosine similarity search with Ollama-hosted Qwen2.5 models, enabling accurate semantic retrieval and reducing hallucinations. Built PDF/DOCX export, persistent chat history, task tracking, and intelligent caching mechanisms to optimize research workflows and system performance.",
     techStack: "FastAPI, React.js, SQLite, ChromaDB, Ollama, Qwen2.5, BGE Embeddings, OpenAlex API",
-    images: [placeholderSvg, placeholderSvg, placeholderSvg]
+    images: ["/images/smart_reseach_assistent1 (1).png", "/images/smart_reseach_assistent2.png", "/images/smart_reseach_assistent3.png"]
   }
 ];
 
