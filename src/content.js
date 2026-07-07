@@ -47,7 +47,6 @@ export const internshipsData = [
   }
 ];
 
-const placeholderSvg = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'><rect width='800' height='600' fill='%231a1c23'/><path d='M350 250 L450 250 L400 200 Z' fill='%23333'/><path d='M300 350 L500 350 L400 250 Z' fill='%23444'/></svg>";
 
 export const projectsData = [
   {
