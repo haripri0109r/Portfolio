@@ -14,7 +14,7 @@ export const socialLinks = {
 export const educationData = [
   {
     institution: "Sri Eshwar College of engineering",
-    score: "7.5(IIIrd - sem)",
+    score: "7.8(IVrd - sem)",
     degree: "B.E CSE",
     duration: "2024-2028"
   },
@@ -98,7 +98,7 @@ export const achievementsData = [
 export const codingProfilesData = [
   {
     platform: "Leetcode",
-    details: "Max Rating:1767| Global Rank: 106,530| Problems Solved : 301",
+    details: "Max Rating:1767| Global Rank: 106,530| Problems Solved : 308",
     link: "https://leetcode.com/u/Haripriyan_2307/"
   },
   {
@@ -135,9 +135,9 @@ export const certificationsData = [
     date: "2025"
   },
   {
-    title: "C & C++ Training Completion",
-    issuer: "IIT Bombay",
-    date: "2024"
+    title: "Java Basic and Advanced Concepts",
+    issuer: "Udemy",
+    date: "2025"
   }
 ];
 
@@ -146,19 +146,19 @@ export const skillsData = {
     {
       title: "Languages",
       skills: [
-        { name: "C" }, { name: "C++" }, { name: "Javascript" }, { name: "Python" }
+        { name: "C++" }, { name: "Java" }, { name: "Javascript" }, { name: "Python" }
       ]
     },
     {
       title: "Technologies/Frameworks",
       skills: [
-        { name: "NodeJS" }, { name: "Express" }, { name: "ReactJS" }, { name: "React Native" }, { name: "OpenCV" }, { name: "Cloud Computing" }, { name: "FireBase" }
+        { name: "NodeJS" }, { name: "Express" }, { name: "ReactJS" }, { name: "React Native" }, { name: "Cloud Computing" }, { name: "FireBase" }, { name: "RAG" }, { name: "Agentic AI" }
       ]
     },
     {
       title: "Database",
       skills: [
-        { name: "SQL" }, { name: "Mongodb" }, { name: "PostgresSQL" }
+        { name: "SQL" }, { name: "Mongodb" }, { name: "PostgresSQL" }, { name: "SQLite" }, { name: "ChromaDB" }
       ]
     },
     {
