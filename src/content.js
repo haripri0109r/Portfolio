@@ -2,7 +2,7 @@ export const personalInfo = {
   name: "Haripriyan A",
   email: "haripri0109r@gmail.com",
   phone: "+91 9787586293",
-  resumeUrl: "/Haripriyan A  resume .pdf"
+  resumeUrl: "https://drive.google.com/drive/folders/1wX26pGf0KfKY6PvdkUqqDys_dPoMGPGG"
 };
 
 export const socialLinks = {
