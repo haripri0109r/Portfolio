@@ -66,7 +66,7 @@ const Contact = () => {
                     name="user_name"
                     required
                     className="w-full bg-transparent border-b border-dark/20 py-3 focus:outline-none focus:border-dark transition-colors font-body text-lg"
-                    placeholder="Jane Doe"
+                    placeholder="Haripriyan A"
                   />
                 </div>
                 <div className="space-y-2">
@@ -76,7 +76,7 @@ const Contact = () => {
                     name="user_email"
                     required
                     className="w-full bg-transparent border-b border-dark/20 py-3 focus:outline-none focus:border-dark transition-colors font-body text-lg"
-                    placeholder="jane@company.com"
+                    placeholder="haripri0109r@gmail.com"
                   />
                 </div>
               </div>
@@ -102,6 +102,12 @@ const Contact = () => {
                 >
                   {loading ? 'SENDING...' : 'SEND MESSAGE'}
                 </button>
+              </div>
+              <div className="pt-8 text-center">
+                <p className="text-sm font-mono opacity-60 mb-4">Or connect directly via email:</p>
+                <a href="mailto:haripri0109r@gmail.com" className="btn-pill-dark inline-block">
+                  SEND AN EMAIL
+                </a>
               </div>
             </motion.form>
           </div>
