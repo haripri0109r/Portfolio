@@ -12,17 +12,24 @@ const Hero = () => {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden leading-none"
+            className="overflow-hidden leading-none mb-8 md:mb-12"
           >
-            <h1 className="heading-display">HARIPRIYAN</h1>
+            <h1 className="heading-display">HARIPRIYAN A</h1>
           </motion.div>
+          
           <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden leading-none"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h1 className="heading-display">A.</h1>
+            <motion.div
+              animate={{ y: [-10, 10, -10] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden border-4 border-cream/20 shadow-2xl transition-all duration-500 ease-in-out cursor-pointer filter grayscale hover:grayscale-0 hover:scale-105 active:grayscale-0 active:scale-105">
+                <img src="/Haripriyan A photo.jpeg" alt="Haripriyan A" className="w-full h-full object-cover" />
+              </div>
+            </motion.div>
           </motion.div>
         </div>
 
