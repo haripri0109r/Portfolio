@@ -10,14 +10,20 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!process.env.REACT_APP_EMAILJS_SERVICE_ID || !process.env.REACT_APP_EMAILJS_PUBLIC_KEY) {
+      alert("Error: Environment variables are not loaded! Please restart your development server (npm start).");
+      return;
+    }
+
     setLoading(true);
 
     emailjs
       .sendForm(
-        'service_h52ndu9',
-        'template_1bng84f',
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         formRef.current,
-        'Y9j4PjFwL8Zg4E0Nq'
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
@@ -28,8 +34,8 @@ const Contact = () => {
         },
         (error) => {
           setLoading(false);
-          console.error(error);
-          alert('Failed to send message.');
+          console.error("EmailJS Error:", error);
+          alert('Failed to send message. Error: ' + (error.text || error.message || "Unknown error"));
         }
       );
   };
