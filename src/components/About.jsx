@@ -10,9 +10,10 @@ const About = () => {
       <section id="education" className="section-light">
         <div className="container-custom">
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="mb-16"
           >
             <h2 className="heading-section text-dark border-b border-dark/20 pb-8">EDUCATION</h2>
@@ -22,11 +23,12 @@ const About = () => {
             {educationData.map((edu, index) => (
               <motion.div 
                 key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-dark/10 pb-6"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ scale: 1.01, x: 5 }}
+                className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-dark/10 pb-6 transition-colors hover:border-dark/30"
               >
                 <div>
                   <h3 className="text-xl md:text-2xl font-display font-medium">{edu.institution}</h3>

@@ -20,17 +20,22 @@ const ProjectDetail = () => {
   }
 
   return (
-    <>
+    <motion.main
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+    >
       <Navbar isProjectPage={true} />
       
       {/* Exit Button */}
       <div className="fixed top-24 left-4 z-50 md:left-8">
-        <Link to="/#projects" className="flex items-center gap-2 text-cream/70 hover:text-cream transition-colors bg-dark/50 p-2 rounded-full backdrop-blur-sm border border-cream/10 hover:bg-dark/80">
+        <a href="/#projects" className="flex items-center gap-2 text-cream/70 hover:text-cream transition-colors bg-dark/50 p-2 rounded-full backdrop-blur-sm border border-cream/10 hover:bg-dark/80">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M19 12H5M12 19l-7-7 7-7" />
           </svg>
           <span className="sr-only md:not-sr-only md:pr-2 text-sm font-mono uppercase tracking-widest">Back to Projects</span>
-        </Link>
+        </a>
       </div>
 
       {/* Work Hero Section (Dark) */}
@@ -41,7 +46,12 @@ const ProjectDetail = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display uppercase tracking-tight mb-8">{project.title}</h1>
+            <motion.h1 
+              layoutId={`project-title-${project.id}`}
+              className="text-4xl md:text-5xl lg:text-6xl font-display uppercase tracking-tight mb-8"
+            >
+              {project.title}
+            </motion.h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto text-cream/70 font-body leading-relaxed">
               {project.description}
             </p>
@@ -93,6 +103,7 @@ const ProjectDetail = () => {
             {project.images.map((img, index) => (
               <motion.div 
                 key={index}
+                layoutId={index === 0 ? `project-image-${project.id}` : undefined}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -109,7 +120,7 @@ const ProjectDetail = () => {
       </section>
 
       <Footer />
-    </>
+    </motion.main>
   );
 };
 

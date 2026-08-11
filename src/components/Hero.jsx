@@ -1,7 +1,29 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-
+import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 const Hero = () => {
+  const name = "HARIPRIYAN A";
+  const prefersReducedMotion = useReducedMotion();
+  const { scrollY } = useScroll();
+  
+  const textY = useTransform(scrollY, [0, 1000], [0, prefersReducedMotion ? 0 : 150]);
+  const imageY = useTransform(scrollY, [0, 1000], [0, prefersReducedMotion ? 0 : 300]);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const letterVariants = {
+    hidden: { opacity: 0, y: 100 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   return (
     <section id="hero" className="section-dark min-h-screen flex items-center justify-center relative overflow-hidden pb-32">
       <div className="container-custom relative z-10 w-full text-center">
@@ -9,18 +31,32 @@ const Hero = () => {
         {/* Massive Name */}
         <div className="flex flex-col items-center">
           <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden leading-none mb-8 md:mb-12"
+            style={{ y: textY }}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="overflow-hidden leading-none mb-8 md:mb-12 flex justify-center will-change-transform"
           >
-            <h1 className="heading-display">HARIPRIYAN A</h1>
+            <h1 className="heading-display flex">
+              {name.split("").map((char, index) => (
+                <motion.span
+                  key={index}
+                  variants={letterVariants}
+                  transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                  className={char === " " ? "w-[3vw] sm:w-[2vw]" : "inline-block"}
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </h1>
           </motion.div>
           
           <motion.div
+            style={{ y: imageY }}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="will-change-transform"
           >
             <motion.div
               animate={{ y: [-10, 10, -10] }}

@@ -25,22 +25,32 @@ const Projects = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <Link 
-                to={`/project/${project.id}`}
-                className="list-row group"
+              <motion.div 
+                whileHover={{ scale: 1.02, y: -5 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <div className="w-full md:w-2/3">
-                  <h3 className="list-row-title">{project.title}</h3>
+                <Link 
+                  to={`/project/${project.id}`}
+                  className="list-row group relative"
+                >
+                <div className="w-[70%] md:w-3/4 pr-4">
+                  <motion.h3 
+                    layoutId={`project-title-${project.id}`}
+                    className="list-row-title"
+                  >
+                    {project.title}
+                  </motion.h3>
                 </div>
-                <div className="w-full md:w-1/3 flex justify-start md:justify-end mt-4 md:mt-0">
+                <div className="w-[30%] md:w-1/4 flex justify-end absolute top-8 right-0 md:relative md:top-0">
                   <div className="overflow-hidden h-6">
                     <div className="flex flex-col transition-transform duration-300 group-hover:-translate-y-6">
-                      <span className="text-sm font-mono uppercase tracking-widest">{project.category}</span>
-                      <span className="text-sm font-mono uppercase tracking-widest text-cream">{project.category}</span>
+                      <span className="text-sm font-mono uppercase tracking-widest text-right">{project.category}</span>
+                      <span className="text-sm font-mono uppercase tracking-widest text-cream text-right">{project.category}</span>
                     </div>
                   </div>
                 </div>
-              </Link>
+                </Link>
+              </motion.div>
             </motion.div>
           ))}
         </div>

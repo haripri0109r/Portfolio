@@ -11,9 +11,10 @@ const Skills = () => {
         <div className="container-custom">
           
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="mb-16 md:mb-32 text-center"
           >
             <h2 className="heading-section">MY SKILLS</h2>
@@ -25,9 +26,10 @@ const Skills = () => {
                 key={index}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className="flex flex-col"
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.7, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ scale: 1.02, y: -5 }}
+                className="flex flex-col p-6 rounded-2xl transition-colors hover:bg-dark/5"
               >
                 <div className="grid-number border-b border-dark/10 pb-4 mb-6">
                   {String(index + 1).padStart(3, '0')}

@@ -34,6 +34,15 @@ export const educationData = [
 
 export const internshipsData = [
   {
+    role: "Better Tomorrow",
+    company: "Better Tomorrow",
+    duration: "2025",
+    description: "Developed a full-stack E-commerce web application using React.js, Node.js, Express.js, and MongoDB, implementing CRUD APIs, user authentication with JWT, cart functionality, and product listing features."
+  }
+];
+
+export const openSourceData = [
+  {
     role: "Open Source Contributor",
     company: "Learning Unlimited",
     duration: "2026",
@@ -44,12 +53,6 @@ export const internshipsData = [
     company: "GirlScript Summer of Code (GSSoC)",
     duration: "2026",
     description: "Contributing to open-source projects through GSSoC 2026 by resolving GitHub issues, developing new features, and submitting pull requests using Git, GitHub, and collaborative development workflows."
-  },
-  {
-    role: "Better Tomorrow",
-    company: "Better Tomorrow",
-    duration: "2025",
-    description: "Developed a full-stack E-commerce web application using React.js, Node.js, Express.js, and MongoDB, implementing CRUD APIs, user authentication with JWT, cart functionality, and product listing features."
   }
 ];
 
@@ -58,7 +61,7 @@ export const projectsData = [
   {
     id: "devpilot",
     title: "DevPilot – Multi-Agent AI Software Development Platform",
-    category: "AI / ML System",
+    category: "Agent AI System",
     date: "2026",
     github: "https://github.com/haripri0109r/Devpilot",
     shortDescription: "An intelligent multi-agent platform automating the complete software development lifecycle.",
@@ -142,7 +145,7 @@ export const projectsData = [
   {
     id: "smart-research",
     title: "Smart Research Assistant",
-    category: "AI / ML System",
+    category: "Agent AI System",
     date: "2026",
     github: "https://github.com/haripri0109r/Smart_research_assistant",
     shortDescription: "An AI-powered research platform that uses LLMs to streamline information discovery, processing, and summarization.",
@@ -276,7 +279,7 @@ export const codingProfilesData = [
   },
   {
     platform: "GeeksforGeeks",
-    details: "Problems Solved : 78 | Coding Score: 78",
+    details: "Problems Solved : 78 | Coding Score: 153",
     link: "https://www.geeksforgeeks.org/profile/hariprio8qw"
   },
   {

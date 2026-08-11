@@ -5,7 +5,6 @@
 @layer base {
   html, body {
     @apply bg-dark text-cream font-body antialiased;
-    scroll-behavior: smooth;
   }
   
   /* Hide scrollbar for clean look */
@@ -27,7 +26,7 @@
   }
   
   .heading-section {
-    @apply font-display font-bold uppercase leading-none tracking-tight text-[8vw] sm:text-[6vw] md:text-[5vw] mb-12 md:mb-24;
+    @apply font-display font-bold uppercase leading-none tracking-tight text-[7vw] sm:text-[5vw] md:text-[4vw] lg:text-[3vw] mb-12 md:mb-24;
   }
 
   /* Buttons */
